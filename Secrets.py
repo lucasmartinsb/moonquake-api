@@ -1,4 +1,3 @@
-from google.cloud import secretmanager
 from azure.keyvault.secrets import SecretClient
 from azure.identity import DefaultAzureCredential
 
