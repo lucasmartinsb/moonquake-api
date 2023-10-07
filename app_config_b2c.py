@@ -1,6 +1,8 @@
 import os
 from Secrets import Secrets
 
+s = Secrets()
+
 b2c_tenant = "fabrikamb2c"
 signupsignin_user_flow = "B2C_1_signupsignin1"
 editprofile_user_flow = "B2C_1_profileediting1"
@@ -11,8 +13,6 @@ resetpassword_user_flow = "B2C_1_passwordreset1"  # Note: Legacy setting.
     # you can remove the resetpassword_user_flow and the B2C_RESET_PASSWORD_AUTHORITY settings from this file.
 
 authority_template = "https://{tenant}.b2clogin.com/{tenant}.onmicrosoft.com/{user_flow}"
-
-s = Secrets()
 
 CLIENT_ID = s.appClientId # Application (client) ID of app registration
 
