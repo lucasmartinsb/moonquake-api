@@ -29,5 +29,5 @@ class Extract:
             data = [document for document in cursor]
             for row in data:
                 del row['_id']
-                row['Timestamp'] = row['Timestamp'].strftime('%d/%m/%Y %H:%M:%S')
+                row['Timestamp'] = row['Timestamp'].strftime('%Y/%m/%d %H:%M:%S')
             return json.dumps(data)
