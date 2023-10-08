@@ -27,5 +27,7 @@ class Extract:
 
             # Crie uma lista de dicionários a partir dos documentos retornados
             data = [document for document in cursor]
-
-            return json.dumps(data,default=json_util.default)
+            for row in data:
+                del row['_id']
+                row['Timestamp'] = row['Timestamp'].strftime('%d/%m/%Y %H:%M:%S')
+            return json.dumps(data)
