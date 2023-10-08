@@ -47,7 +47,7 @@ class Extract:
             for row in data:
                 del row['_id']
                 pos = self.position(row['Timestamp'])
-                row['Date'] = row['Timestamp'].strftime('%Y/%m/%d')
+                row['Date'] = row['Timestamp'].strftime('%m/%d/%Y')
                 row['Timestamp'] = row['Timestamp'].strftime('%Y/%m/%d %H:%M:%S')
                 row['MoonphaseAngle'] = self.phase(pos)
             return json.dumps(data)
