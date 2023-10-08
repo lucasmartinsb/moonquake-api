@@ -6,9 +6,11 @@ import msal
 import app_config
 from Secrets import Secrets
 from Extract import Extract
-
+from Model import Model
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 app.config.from_object(app_config)
 Session(app)
 
