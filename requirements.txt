@@ -17,6 +17,7 @@ azure-keyvault
 azure-identity
 pandas
 pymongo
+scikit-learn
 flask_cors
 
 # cachelib==0.1  # Only need this if you are running Python 2
