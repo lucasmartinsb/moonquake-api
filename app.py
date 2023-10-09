@@ -6,6 +6,7 @@ import msal
 import app_config
 from Secrets import Secrets
 from Extract import Extract
+from Model import Model
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -31,6 +32,13 @@ def quakes():
     secrets = Secrets()
     extract = Extract(mongoConnectionString=secrets.mongoConnectionString)
     return extract.extraction(db="moonquakeDb", collection="moonquake")
+
+model = Model(quakes())
+
+
+@app.route("/predict-quake/<date>/<lat>/<long>", methods=["GET"])
+def predict_quake(date, lat, long):
+    return model.predict(date=date, lat=lat, long=long)
     
 
 
